@@ -1,0 +1,26 @@
+<h1>List of doctors</h1>
+<table class="table table-striped" aria-describedby="">
+    <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Name</th>
+            <th scope="col">Gender</th>
+            <th scope="col">Birthdate</th>
+            <th scope="col">Speciality</th>
+            <th scope="col">OrderId</th>
+            <th scope="col">Rate</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let doctor of doctors">
+            <th scope="row">{{doctor.id}}</th>
+            <td>{{doctor.name}}</td>
+            <td>{{doctor.gender}}</td>
+            <td>{{doctor.birthdate | date:"dd/MM/yyyy"}}</td>
+            <td>{{doctor.speciality}}</td>
+            <td>{{doctor.orderId}}</td>
+            <td>{{doctor.rate | currency:"EUR"}}</td>
+            <td (click) = "goToDoctor(doctor.id)">EDIT</td>
+        </tr>
+    </tbody>
+</table>

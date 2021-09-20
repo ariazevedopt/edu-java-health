@@ -1,24 +1,25 @@
 package pt.dlt.health.dto;
 
-import java.time.LocalDate;
 import javax.persistence.Entity;
+import java.time.LocalDate;
 
 @Entity
 public class Patient extends Person {
-    
+
     private long socialSecurityNumber;
     private String insuranceNumber;
-    
-    
-    public Patient() {}
-    
+
+
+    public Patient() {
+    }
+
     public Patient(String name, char gender, LocalDate birthdate, int citizenCard, int fiscalNumber, int phoneNumber, String address, long socialSecurityNumber,
-            String insuranceNumber) {
+                   String insuranceNumber) {
         super(name, gender, birthdate, citizenCard, fiscalNumber, phoneNumber, address);
         this.setSocialSecurityNumber(socialSecurityNumber);
         this.setInsuranceNumber(insuranceNumber);
     }
-    
+
     @Override
     public String getName() {
         if (this.gender == 'F') {
@@ -29,21 +30,21 @@ public class Patient extends Person {
             return super.getName();
         }
     }
-    
+
     public long getSocialSecurityNumber() {
         return socialSecurityNumber;
     }
-    
+
     public void setSocialSecurityNumber(long socialSecurityNumber) {
         this.socialSecurityNumber = socialSecurityNumber;
     }
-    
+
     public String getInsuranceNumber() {
         return insuranceNumber;
     }
-    
+
     public void setInsuranceNumber(String insuranceNumber) {
         this.insuranceNumber = insuranceNumber;
     }
-    
+
 }
